@@ -1,5 +1,5 @@
 # Passphrase-dehasher
-Dictionary attack tool for dehashing passwords composed of predictable combinations of natural language and salt values for ethical/educational purposes.
+Dictionary attack tool for dehashing passwords composed of predictable combinations of natural language and salt values for ethical/educational/pentesting purposes.
 
 
 # Disclaimer
