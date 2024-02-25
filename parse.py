@@ -744,18 +744,14 @@ def AddT6depth(arr, count_phrases, creationlimit,word_ends_sentence):
     return words_arr,count_phrases
    
 def convert_input_format():
-    if input_data:
-        #print("Input data received:", input_data)
-        # Input text
-        input_text = input_data
-        # Remove leading and trailing double quotes
-        input_text = input_text.strip('"')
-        # Split the input text by ", " to separate each string
-        strings = input_text.split('", "')
-        for string in strings:
-            with open(file_path, 'a') as file:
-                file.write(string + '\n') 
-                #file.write('"' + mysentences + '", ')
+    with open(input_path, 'r') as file:
+        # Iterate over each line in the file
+            print("Phase A")
+            for string in file:
+                sentence = string.strip()
+                with open(file_path, 'a') as file:
+                    file.write(string + '\n') 
+                    #file.write('"' + mysentences + '", ')
         
 def Unit_Test():    
     success_count = 0
@@ -1058,8 +1054,8 @@ def crack_hash(example_hash,Test):
         #return False
 
 clear_console()
-#brokenplzfix#analysis()  
-Unit_Test()
+analysis()  
+#Unit_Test()
 #create_testhash("test123ihatethis")
 #main_crack()
 #convert_input_format() # convert from "phrase1", "phrase2", "etc." --> phrases without "" seperated by a new line
