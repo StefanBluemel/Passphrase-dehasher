@@ -19,9 +19,11 @@ The main script containing all functionallity is the parse.py script. In the cur
 Lets break this down a little:
 
 We can take an Input Text file, analyze it on a line by line basis and then auto generate all kinds of new combinations of words based on the observed patterns in the original Input.
-(This will work better if the Input is using only one language, preferably containing example phrases around the topic of password phrases, popular songs lyrics or movies quotes)
+(This will work better if the Input is using only one language, preferably containing example phrases around the topic of password phrases, popular song lyrics or movies quotes)
 
-It is adviced to seperate this type of input from unrelated dictonaries that mainly focus on attack different behavior patterns.
+after all the first rule of fightclub is to not use weak passphrases right?
+
+It is adviced to seperate the topics of any generated input from unrelated dictonaries that mainly focus on attacking different behavior patterns.
 
 
 Another capability of the Tool is to use a given Input Dictonary to compare its contents with a target hash.
@@ -36,3 +38,8 @@ This tool is also capable of generating a clean output.txt file based on its Inp
 # Documentation
 
 A detailed Documentation of this project will be added at a later date.
+
+# Features being worked on
+
+The salting logic is still a work in progress
+
