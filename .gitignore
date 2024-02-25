@@ -1,3 +1,5 @@
 *.txt
 !gptquery_templates.txt
 !documentation_WIP.txt
+LICENSE
+*.md
