@@ -436,104 +436,100 @@ def T7_analysis(words,tier7_arr):
     return tier7_arr
 
 def analysis():
-    input_text = input_data
-    # Remove leading and trailing double quotes
-    input_text = input_text.strip('"').lower()
-    # Split the input text by ", " to separate each string
-    strings = input_text.split('", "')
-    # Initialize dictionaries to store observations
+     with open(input_path, 'r') as file:
+        # Iterate over each line in the file
+            print("Phase A")
+            for string in file:
+                sentence = string.strip()
 
-    # Tokenization and frequency counting   
-    for sentence in strings:
-        sentence = sentence.replace(",","").replace(".","").replace(":","").replace(";","").replace("!","").replace("?","").replace("-","")
-        words = sentence.split()
-        # Update word frequency counts
-        for word in words:
-            word_frequency[word] += 1
+                # Tokenization and frequency counting   
+   
+                sentence = sentence.replace(",","").replace(".","").replace(":","").replace(";","").replace("!","").replace("?","").replace("-","")
+                words = sentence.split()
+                # Update word frequency counts
+                for word in words:
+                    word_frequency[word] += 1
 
-        # Update words that start sentences
-        T5_analysis(words,tier5_arr)
+                # Update words that start sentences
+                T5_analysis(words,[])
 
-        # Update words that follow other words
-        if len(words) > 2:
-            for i in range(len(words) - 1):
-                word_follows2[words[i]][words[i + 1]] += 1
-            for i in range(len(words) - 2):  # Changed to len(words) - 2 for three-word sequences
-                word_follows3[(words[i], words[i + 1])][words[i + 2]] += 1  # Use a tuple for three-word sequences
-        if len(words) > 3:
-            for i in range(len(words) - 3):  # Changed to len(words) - 2 for four-word sequences
-                word_follows4[(words[i], words[i + 1], words[i + 2])][words[i + 3]] += 1  # Use a tuple for four-word sequences
-        if len(words) > 4:
-            for i in range(len(words) - 4):  # Changed to len(words) - 2 for four-word sequences
-                word_follows5[(words[i], words[i + 1], words[i + 2], words[i + 3])][words[i + 4]] += 1  # Use a tuple for five-word sequences
-        if len(words) > 5:
-            for i in range(len(words) - 5):  # Changed to len(words) - 2 for four-word sequences
-                word_follows6[(words[i], words[i + 1], words[i + 2], words[i + 3], words[i + 4])][words[i + 5]] += 1  # Use a tuple for six-word sequences
+                # Update words that follow other words
+                if len(words) > 2:
+                    for i in range(len(words) - 1):
+                        word_follows2[words[i]][words[i + 1]] += 1
+                    for i in range(len(words) - 2):  # Changed to len(words) - 2 for three-word sequences
+                        word_follows3[(words[i], words[i + 1])][words[i + 2]] += 1  # Use a tuple for three-word sequences
+                if len(words) > 3:
+                    for i in range(len(words) - 3):  # Changed to len(words) - 2 for four-word sequences
+                        word_follows4[(words[i], words[i + 1], words[i + 2])][words[i + 3]] += 1  # Use a tuple for four-word sequences
+                if len(words) > 4:
+                    for i in range(len(words) - 4):  # Changed to len(words) - 2 for four-word sequences
+                        word_follows5[(words[i], words[i + 1], words[i + 2], words[i + 3])][words[i + 4]] += 1  # Use a tuple for five-word sequences
+                if len(words) > 5:
+                    for i in range(len(words) - 5):  # Changed to len(words) - 2 for four-word sequences
+                        word_follows6[(words[i], words[i + 1], words[i + 2], words[i + 3], words[i + 4])][words[i + 5]] += 1  # Use a tuple for six-word sequences
 
-    # Example analysis
-    most_frequent_words = sorted(word_frequency.items(), key=lambda x: x[1], reverse=True)[:30]
-    #words_starting_sentences = sorted(word_starts_sentence.items(), key=lambda x: x[1], reverse=True)[:70]
-    words_starting_sentences = sorted(word_starts_sentence.items(), 
-                                   key=lambda x: sum(x[1].values()), 
-                                   reverse=True)[:70]
+            # Example analysis
+            most_frequent_words = sorted(word_frequency.items(), key=lambda x: x[1], reverse=True)[:30]
+            #words_starting_sentences = sorted(word_starts_sentence.items(), key=lambda x: x[1], reverse=True)[:70]
+            words_starting_sentences = sorted(word_starts_sentence.items(), 
+                                        key=lambda x: sum(x[1].values()), 
+                                        reverse=True)[:70]
 
-    #print(word_follows3["my", "nth"])
-       # for x in word_follows3["my", "nth"]:
-        #    print(x)
-    
-    if True:
-        #print(word_ends_sentence)
-        generate_passphrases(words_starting_sentences,word_ends_sentence)
+            #print(word_follows3["my", "nth"])
+            # for x in word_follows3["my", "nth"]:
+                #    print(x)
+            
+            if True:
+                #print(word_ends_sentence)
+                generate_passphrases(words_starting_sentences,word_ends_sentence)
 
-                                                                            
-    #print(x)
-    #print(w,followsT2,followsT3,followsT4,followsT5,followsT6,followsT7,followsT8,followsT9,followsT10,followsT11,followsT12)
+                  
 
-
-    # Output analysis results
-    #print("Top 30 frequent words:")
-    #print(most_frequent_words)
-    #print("")
-    #print("number of unique words")
-    #print(len(word_frequency.items()))
-    #print("")
-    if False:
-        print("Top 70 Word combination that start sentences (tier 5 uniqueness):")
-        #print(words_starting_sentences)
-        for word, word2 in words_starting_sentences:
-            print(word,word2)
-        #print(word_frequency["is"])
-        print("")
-        print("")
-        print("")
-        print("Word following frequencies level 2:")
-        count = 0
-        for word, follows in word_follows2.items():
-            print(word, ':\n', follows)
-            print("----")
-            count += 1
-            if count == 8:
-                break
-        
-        count = 0
-        print("")
-        print("")
-        print("")
-        print("Word following frequencies level 3:")
-        for word, follows in word_follows3.items():
-            print(word, "----", follows)
-            print("----")
-            count += 1
-            if count == 8:
-                break
+            # Output analysis results
+            #print("Top 30 frequent words:")
+            #print(most_frequent_words)
+            #print("")
+            #print("number of unique words")
+            #print(len(word_frequency.items()))
+            #print("")
+            if False: # DEPRECATED
+                print("Top 70 Word combination that start sentences (tier 5 uniqueness):")
+                #print(words_starting_sentences)
+                for word, word2 in words_starting_sentences:
+                    print(word,word2)
+                #print(word_frequency["is"])
+                print("")
+                print("")
+                print("")
+                print("Word following frequencies level 2:")
+                count = 0
+                for word, follows in word_follows2.items():
+                    print(word, ':\n', follows)
+                    print("----")
+                    count += 1
+                    if count == 8:
+                        break
+                
+                count = 0
+                print("")
+                print("")
+                print("")
+                print("Word following frequencies level 3:")
+                for word, follows in word_follows3.items():
+                    print(word, "----", follows)
+                    print("----")
+                    count += 1
+                    if count == 8:
+                        break
 
 
-        #print("------")
-        
-        #for follows in word_follows2["security"]:
-            #print("T2:", follows)
-            #for word2, follows2 in word_follows2["security", follows]:
-                #print("T3:     ",word2, follows2)
+                #print("------")
+                
+                #for follows in word_follows2["security"]:
+                    #print("T2:", follows)
+                    #for word2, follows2 in word_follows2["security", follows]:
+                        #print("T3:     ",word2, follows2)
             
 def generate_passphrases(words_starting_sentences,word_ends_sentence):
 
