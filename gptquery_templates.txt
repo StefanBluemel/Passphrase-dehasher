@@ -6,10 +6,14 @@ The phrase should be a variation of for example:
 "this is a very strong password"
 "my secure password"
 "unbreakable super secure password"
-please write them in on line in this format "Yet Another Password","Annoying But Secure",etc.
+"i hate passwords"
 give me 200 variants that are at least 7 words long
-please write them all in one line seperated by a comma surrounded by "" and without any numbers
+use natural sounding words while pointing out that you hate it. 
+make it at most one sentences for phrase without any special characters or numbers whatsoever
+dont use words such as "ugh" or "thing" 
 
+v1.5 addition
+make them all start with "I hate
 
 v2
 give me passphrases that sounds like natural language passwords around the topic of being a password that the user feels annoyed or proud of in some way or another.
@@ -18,9 +22,10 @@ The phrase should be a variation of for example:
 "my secure password is so super clever I feel bad for any hacker"
 "my unbreakable super secure password is too hard to hack"
 "I like it when I am secure therefore I make strong passwords"
-please write them in on line in this format "phrase1","phrase2",etc. the phrase itself should not contain special characters or numbers
-give me 150 variants each containting exactly at least 8 natural words
-please write all phrases in one line seperated by a comma surrounded by "" and without any numbers
+give me 200 variants that are at least 9 words long
+use natural sounding words
+make it at most one sentences for phrase without any special characters or numbers whatsoever
+dont use words such as "ugh" or "thing" 
 
 v3
 give me passphrases that sounds like natural language passwords around the topic of being a password that the user feels annoyed or proud of in some way or another.
@@ -29,9 +34,7 @@ The phrase should be a variation of for example:
 "I have UPPERCASE and lowercases here as well as NUMBERS and special characters to keep myself protected"
 "I am secure because no one can guess this super long password that is beyond guessable haha"
 "My password is the most valuable thing I own therfore I keep it secure and protected"
-please write them in on line in this format "phrase1","phrase2",etc. the phrase itself should not contain special characters or numbers
 give me 150 variants each containting exactly at least 20 natural words
-please write all phrases in one line seperated by a comma surrounded by "" and without any numbers
 if the phrase you come up with is less than 20+ words long do not give it back to me as output
 
 v4
@@ -40,8 +43,6 @@ The phrase should be a variation of for example:
 "I do not believe that anyone can guess this password because of the exponential number of possibilities that it could have been made up of"
 "You wont be able to guess this password therefore I will win this challenge as you would have realized if you listened to me in the first place"
 "Guessing long pass phrases like this is extremly difficult therefore I am confindent in this being a secure password"
-please write them in on line in this format "phrase1","phrase2",etc. the phrase itself should not contain special characters or numbers
-please write all phrases in one line seperated by a comma surrounded by "" and without any numbers
 if the phrase you come up with is less than 20+ words long do not give it back to me as output
 give me 200 new variants of this preferably with a high mutation factor and little similarity to the previous ones
 
@@ -55,22 +56,9 @@ The phrase should be a variation of for example:
 "This can not be guessed because it is very complex and obscure"
 
 give me 200 new variants of this preferably with a high mutation factor and little similarity to the previous ones
-please try to make them sound as if they came from actual people with emotional intend behind it. This could be them being annoyed, angry, happy, excited or whatever. Dont use super complex words make them as insecure as possible but also very long.
-each phrase should start with a different word for example 2 different phrases are never allowed to both start with the word "this"
-please write them in on line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
-please write all phrases in one line seperated by a comma followed by exactly one space character surrounded by "" and without any numbers
+please try to make them sound as if they came from actual people with emotional intend behind it. This could be them being annoyed, angry, happy, excited or whatever. 
+Dont use super complex words make them as insecure as possible but also very long.
 
-
-v5.5
-adding this line is kinda fun:
-make it sound like the person creating the password is a confused child with linguistic difficulties
-
-or this
-make it sound like the person creating the password is a confused child that can form grammatically correct low complex sentences
-
-
-v5.6
-i dont like any of those give me something entirely different
 
 --------------- this is where the quality of the test data improved by factor 100
 
@@ -79,7 +67,6 @@ v6 - star wars themed passwords
 give me 200 different passphrases containing natural language based on famous star wars movie quotes but modified a little for the purpose of being used as a password
 each one should be at least 10 words long and not be part of your previous responses
 please write them in on line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
-please write all phrases in one line seperated by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 
 
@@ -89,28 +76,24 @@ give me 200 different passphrases containing natural language based on famous fi
 I want you to create variants of these:
 "First rule of passwords: don't talk about them, keep them secret", "Second rule of passphrases: always mix characters, numbers, and symbols", "You do not talk about your password, keep it secure and hidden"
 please write them in one line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
-seperate them by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 
 v6.2 - The godfather
 
 give me 200 different passphrases containing natural language based on famous The Godfather movie quotes but modified a little for the purpose of being used as a password
 please write them in one line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
-seperate them by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 
 v6.3 - Forrest Gump
 
 give me 200 different passphrases containing natural language based on famous forrest Gump movie quotes but modified a little for the purpose of being used as a password
 please write them in one line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
-seperate them by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 
 
 v6.4 - The Lord of the Rings
 
 give me 200 different passphrases containing natural language based on famous The Lord of the Rings movie quotes but modified a little for the purpose of being used as a password
-seperate them by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 please write them in one line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
 
@@ -119,7 +102,6 @@ please write them in one line in this format "phrase1", "phrase2", "etc."  the p
 v6.5 - song lyrics
 
 give me 200 different passphrases containing natural language based on famous song lyrics but modified a little for the purpose of being used as a password
-seperate them by a comma followed by exactly one space character surrounded by "" and without any numbers
 dont leave out spaces between words and make sure that the phrase mentions the word password or passphrase at least once
 please write them in one line in this format "phrase1", "phrase2", "etc."  the phrase itself should not contain special characters or numbers
 
