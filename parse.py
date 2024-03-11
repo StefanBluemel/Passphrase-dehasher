@@ -1060,80 +1060,83 @@ analysis()
 #main_crack()
 #convert_input_format() # convert from "phrase1", "phrase2", "etc." --> phrases without "" seperated by a new line
 
+if True:
+        
+    #any print statement below that is commented out has been accomplished 
+    print("")
+    print("TODOS: ")
+    print("fix analysis function which uses Deprecated file reading logic")
+    print("figure out if the script should support piped input or just use absolute hard coded path input")
 
-#any print statement below that is commented out has been accomplished 
-print("")
-print("TODOS: ")
-print("fix analysis function which uses Deprecated file reading logic")
-print("figure out if the script should support piped input or just use absolute hard coded path input")
+    ###------
+    print("create a new generation function that completely bruteforces passwords based on how frequently used words are in the dictonaries")
 
-###------
-print("create a new generation function that completly bruteforces passwords based on how frequently used words are in the dictonaries")
+    #example top 10 words being "a,b,c,d,e,f,g,h,i,j,k"
+    #lets do up to 4 layers of word combinations + salted characters like 123 ! ? etc.
 
-#example top 10 words being "a,b,c,d,e,f,g,h,i,j,k"
-#lets do up to 4 layers of word combinations + salted characters like 123 ! ? etc.
+    #for example generate:
+    #a
+    #aa
+    #aaa
+    #aaaa
+    #aaab
+    #...
+    #aab
+    #aac
+    #aad
+    #aae
+    #...
+    #ab
+    #aba
+    #abb
+    #abc
+    #abd
+    #abe
+    #...
+    #ac
+    #aca
+    #acb
+    #acc
+    #acd
+    #ace
+    #...
+    #ad
+    #...
+    #ae
+    #...
+    #af
+    #...
+    #ag
+    #...
+    ###-------
 
-#for example generate:
-#a
-#aa
-#aaa
-#aaaa
-#aaab
-#...
-#aab
-#aac
-#aad
-#aae
-#...
-#ab
-#aba
-#abb
-#abc
-#abd
-#abe
-#...
-#ac
-#aca
-#acb
-#acc
-#acd
-#ace
-#...
-#ad
-#...
-#ae
-#...
-#af
-#...
-#ag
-#...
-###-------
-
-#print("figure out a faster way to read the data having massive amounts of data stored in a variable is too slow maybe read it line by line")
-#print("read input line by line from a file instead of stuffing massive amount of data in a variable and reading from the variable line by line")
-print("teach the script some basic grammar like subordinate clause stuff")
-print("add salt...")
-print("Add salting character such as !!!,?,123,1234,12345 at the start or end of phrases ")
-#print(measure and optimize processing speed with large file inputs)
-#print("fighting redundancy")
-#print("add unit test for partial check of passphrases for example hash the first word then the first two then the first three and so on")
-#print("analyze how natural sentences typically end and forcefully stop at that point while generating new random ones")
-#print("generate new phrases based on frequency analysis of existing example data")
-print("crawl famous quotes / famous song lyrics")
-print("Add typo check for example 1 key around the intended key for each char in a passphrase with maximum one allowed error at a time")
-print("Add typo check switch 2 characters Tihs -> This")
-#print("Optimize Logik to analyze word combination frequency")
-#print("Add Logik to Generate Random new phrases based on the frequency observations from the previous analysis")
-#print("make only the first letter of each word uppercase")
-print("generate phrases based on a random combination of most frequently used words in the passphrase analysis even if it has never been seen that they are combined like that")
-print("figure out a solution for words like: It's I'm I'll can't There's don't doesn't")
-print("Create a menu that takes a sentences as input and compares it with its dictonaries to display the required dictonaries to recreate it")
-print("Add Automated chatGPT phrase generation")
+    #print("figure out a faster way to read the data having massive amounts of data stored in a variable is too slow maybe read it line by line")
+    #print("read input line by line from a file instead of stuffing massive amount of data in a variable and reading from the variable line by line")
+    print("teach the script some basic grammar like subordinate clause stuff")
+    print("add salt...")
+    print("Add salting character such as !!!,?,123,1234,12345 at the start or end of phrases ")
+    print("make dedicated dictonaries for subjects, verbs, adjectives and so on")
+    print("add a new phrase generating algorithm that uses basic grammar like each 1 subject, object, verb and adjective to create more out of scope passphrases without prior observed word combinations")
+    #print(measure and optimize processing speed with large file inputs)
+    #print("fighting redundancy")
+    #print("add unit test for partial check of passphrases for example hash the first word then the first two then the first three and so on")
+    #print("analyze how natural sentences typically end and forcefully stop at that point while generating new random ones")
+    #print("generate new phrases based on frequency analysis of existing example data")
+    print("crawl famous quotes / famous song lyrics")
+    print("Add typo check for example 1 key around the intended key for each char in a passphrase with maximum one allowed error at a time")
+    print("Add typo check switch 2 characters Tihs -> This")
+    #print("Optimize Logik to analyze word combination frequency")
+    #print("Add Logik to Generate Random new phrases based on the frequency observations from the previous analysis")
+    #print("make only the first letter of each word uppercase")
+    print("generate phrases based on a random combination of most frequently used words in the passphrase analysis even if it has never been seen that they are combined like that")
+    print("figure out a solution for words like: It's I'm I'll can't There's don't doesn't")
+    print("Create a menu that takes a sentences as input and compares it with its dictonaries to display the required dictonaries to recreate it")
+    print("Add Automated chatGPT phrase generation")
 
 
 
 
-#usefull cmds
-#cat test.txt | python3 parse.py                 #Deprecated cmd currently no piped input supported
-#echo -n "YetAnotherPassword" | shasum -a 256    #Create a Test Hash in any unix based shell
-#
+    #usefull cmds
+    #cat test.txt | python3 parse.py                 #Deprecated cmd currently no piped input supported
+    #echo -n "YetAnotherPassword" | shasum -a 256    #Create a Test Hash in any unix based shell
+    #
