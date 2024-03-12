@@ -1,1 +1,56 @@
-Coming soon...
+This Documentation is a Work in Progress
+
+# Passphrase dehasher Documentation
+
+**written by Stefan Blümel**
+
+### TLDR:
+
+The dehasher is meant as a pentesting tool targeting a certain nishe of Passwords composed of natural language Passphrase's vulnerable to dictonary Bruteforce attacks. It takes in a large set of example passphrases, analyzes the frequency and probability of words following each other in order to brute force generate new passphrases and compare them with a given target hash.
+
+This documentation will give a peak into parts of the creation story of how the Passphrase dehasher came to be, highlight it’s core features, as well as give an overview of practical use cases.
+
+Originally this was meant as a little challenge by my instructor Chris Powell, who created a sha256 hash value and told me to try my luck at cracking it. And spoiler alert (it still remains uncracked to this date).
+
+### Minimum requirements to get this tool run:
+
+(these steps will be simplified in a future update so you don’t have to modify the code)
+
+- Please modify the hash Value in the example_hash variable in the main_crack() function to whatever you want to crack.
+- To support types of hashes other than the default sha256 hash, please edit the target hash type in the check_hash() function in the parse.py script.
+- By default the python script will look for an input file containing examples of natural language passphrases in the global variable input_path = "test3.txt” please rename this to whatever your input file is called. The format of the phrases should look something like in the following example. Each word needs to be seperated by a space character. Each phrase should be seperated by a line break.
+
+![Screenshot 2024-03-07 at 14.26.20.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3a9085c4-df29-45e6-8bc7-6c9c0a25ea8c/52f531e6-1624-48a7-bfd1-a5e692848ab7/Screenshot_2024-03-07_at_14.26.20.png)
+
+- A standard library of common passphrases will not be provided by the author of this tool. However there are some ChatGPT queries provided that will let you build your own specific Dictonaries quickly.
+- Please make sure the main_crack() function is not commented out before running the script.
+- Use whatever python version and run the parse.py script that can be found in this repository:
+https://github.com/StefanBluemel/Passphrase-dehasher
+
+### Recommended steps before getting to cracking:
+
+- Make sure to build a specific Dictonary for whatever target you have. Be that people that seem unmotivated and hate their job / the harsh password policies that makes them change their password all of the time or perhaps some sports or movie nerds that will likely have some geeky passphrase.
+- Check out the both the provided ChatGPT queries to help get you started with building you own Dictonaries, as well as the inbuilt redundancy_check() functionality that helps you get rid of duplicate Phrases that sneaked their way into your Dictonary.
+- Make sure to make use of the inbuilt Analysis and Passphrase Generation Features to turn sets of a few thousands of Phrases into potentially millions or more phrases.
+
+## Breakdown of all Features:
+
+### Unit Tests:
+
+One of the first features implemented was the capability to Support Unit tests. This allows anyone to extend the default Passphrase cracking patterns more easily, by adding custom rules to the existing Unit Tests. With the tool being available open source there is little to no barrier for anyone to add their own Unit Tests in their own versions of this tool. If anyone forks the GitHub Repository and makes some changes the Unit Test will likely immediately point out if any of the original functionality has been broken by a new change. It also lets you know if any of the new pattern has been successfully cracked or if you still need to add some changes to the logic to make it work.
+
+![1 Status after day one of the project.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3a9085c4-df29-45e6-8bc7-6c9c0a25ea8c/31df94fe-b62a-4f83-92ec-02f510e02f58/1_Status_after_day_one_of_the_project.png)
+
+In order to add your own Unit test please check out the UnitTest() function in the parse.py file. Adding a new one is as simple as copying one of the templates and adding the hash value that is meant to be tested. To activate Unit Tests before running make sure the function is executed and not commented out.
+
+### Building dictonaries:
+
+Check out the provided chatGPT queries for building targeted Dictonaries. They can be found in the gptquery_templates.txt file.
+
+Everything below this area of the documentation is still a work in Progress as of March 12th 2024
+
+redundancycheck function
+
+analysis function()
+
+Passphrase Generator()
